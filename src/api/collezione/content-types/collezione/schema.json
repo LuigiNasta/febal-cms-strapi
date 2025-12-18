@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "collezioni",
+  "info": {
+    "singularName": "collezione",
+    "pluralName": "collezioni",
+    "displayName": "Collezione"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "nome"
+    },
+    "descrizione": {
+      "type": "blocks"
+    },
+    "immagine_hero": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "prodotti": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::prodotto.prodotto",
+      "mappedBy": "collezione"
+    }
+  }
+}
